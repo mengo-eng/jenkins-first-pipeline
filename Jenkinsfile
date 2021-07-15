@@ -5,6 +5,7 @@ pipeline {
                 steps {
                     echo "This time from Github"
 		            echo "Now webhook is added to a pipeline"
+                    sh "python -V"
                     sh 'python hello.py'
             }
         }
