@@ -4,7 +4,7 @@ pipeline {
             stage("build") {
                 steps {
                     echo "This time from Github"
-                    sh 'echo "Hope it will work this time :) "'
+                    sh 'pwd'
             }
         }
     }
