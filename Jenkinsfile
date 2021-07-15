@@ -4,8 +4,9 @@ pipeline {
             stage("build") {
                 steps {
                     echo "This time from Github"
-		    echo "Now webhook is added to a pipeline"
-                    sh 'pwd'
+		            echo "Now webhook is added to a pipeline"
+                    sh 'python hello.py'
+                    echo $(date)
             }
         }
     }
