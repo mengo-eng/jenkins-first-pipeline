@@ -1,12 +1,16 @@
 pipeline {
-    agent { label 'master'}
+    agent { label 'master' }
     stages {
-            stage("build") {
-                steps {
-                    echo "This time from Github"
-		            echo "Now webhook is added to a pipeline"
-                    sh "python -V"
-                    sh 'python hello.py'
+        stage('build') {
+            steps {
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
         }
     }
